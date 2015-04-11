@@ -1,0 +1,15 @@
+<h2>A Man and a Maid</h2>
+<p>NURSERY RHYME</p>
+<p>There was a little man,<br>
+Who wooed a little maid,<br>
+And he said, "Little maid, will you wed, wed, wed?<br>
+I have little more to say,<br>
+So will you, yea or nay,<br>
+For least said is soonest mended-ded, ded, ded."</p>
+
+<p>The little maid replied,<br>
+"Should I be your little bride,<br>
+Pray what must we have for to eat, eat, eat?<br>
+Will the flame that you're so rich in<br>
+Light a fire in the kitchen?<br>
+Or the little god of love turn the spit, spit, spit?"</p>

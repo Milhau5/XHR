@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+	<title>XHR CSV</title>
+	<style>
+		*{
+			font-family:Inconsolata;
+			color: cyan; 
+			text-align: center;
+		}
+		
+		body { margin: 0px; padding: 0px; background-image: url("wood.jpg"); background-size: cover; background-repeat: no-repeat; #6666CC;}
+	</style>
+	<script>
+	(function(){
+		window.onload = init;
+		
+		//CREDIT:
+		//http://www.desktopwallpapers4.me/abstract/wood-pattern-3604/
+		
+		function init(){
+			document.querySelector('#storyChooser').onchange = loadData;
+			/*var canvas = document.getElementById('myCanvas');
+            var context = canvas.getContext('2d');
+			var image = new Image();*/
+		}
+		
+		/*function drawPattern() {
+	context.fillStyle = context.createPattern(image, "repeat");
+    context.fillRect(0, 0, 300, 300);
+        }*/
+
+//image.src = "wood.jpg";
+//image.onload = drawPattern;
+		
+		function loadData(e){
+			var xhr = new XMLHttpRequest();
+		
+			xhr.onload = function(){
+				var response = xhr.responseText;
+				document.querySelector('#content').innerHTML = response;
+			}
+			
+			var h = "hello.txt";
+			var url = "jaberwocky.txt";
+			var url2 = "maid.txt";
+			var t = e.target.value;
+			if(t == 1)
+			{
+			xhr.open('GET',h,true);
+			}
+			else if(t == 2)
+			{
+			xhr.open('GET',url,true);
+			}
+			else if(t == 3)
+			{
+			xhr.open('GET',url2,true);
+			}
+			// try to prevent browser caching by sending a header to the server
+			xhr.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2010 00:00:00 GMT");
+			xhr.send();
+		}
+	
+	}())
+	
+	</script>
+</head>
+<body>
+<canvas id="myCanvas" width="578" height="200"></canvas>
+	<div id="controls">
+    	<label>Story: 
+			<select id="storyChooser">
+				<option value="1" selected>Hello</option>
+				<option value="2">Jaberwocky</option>
+        		<option value="3">A Man and a Maid</option>
+    		</select>
+			</label>
+			</div>
+	<div id='content'></div>
+	
+</body>
+</html>
